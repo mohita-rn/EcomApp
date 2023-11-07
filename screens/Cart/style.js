@@ -56,7 +56,7 @@ export default styles = StyleSheet.create({
         color: COLORS.primary,
         textAlign: 'right',
         marginRight: useWidth(5),
-        top: -110
+        top: -50
     }, total: {
         flexDirection: 'row',
         alignItems: 'center',
