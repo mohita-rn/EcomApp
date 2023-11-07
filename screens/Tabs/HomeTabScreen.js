@@ -111,21 +111,21 @@ const toggleLike = (itemId) => {
       >
         <View>
         {/* {item.thumbnail ? <Image fallback={true} source={{uri: item.thumbnail}} style={style.thumbnail} resizeMode="contain"/> : */}
-          <Ionicon name="image-outline" size={100} color={COLORS.white} style={{width: 100, height: 100}}/>
+          <Ionicon name="image-outline" size={100} color={COLORS.light} style={{width: 100, height: 100, left: 15}}/>
           {/* }  */}
         <TouchableOpacity
         style={styles.heartContainer}
         onPress={() => toggleLike(item.id)}
       >
         <AntDesign
-          name={isLiked ? "heart" : "hearto"} // Use different icon names for filled and outlined hearts
+          name={isLiked ? "heart" : "hearto"} 
           size={20}
-          color={isLiked ? "red" : "black"} // Change the heart color to red when liked
+          color={isLiked ? "red" : "black"} 
         />
       </TouchableOpacity>
         </View>
         <View style={style.itemdesc}>
-          <View>
+          <View style={{marginLeft: -10, marginBottom: -20}}>
             <Text style={style.price}>{'$'}{item.price}</Text>
             <Text style={style.title}>{item.title}</Text>
           </View>
@@ -138,15 +138,11 @@ const toggleLike = (itemId) => {
   }
 
   const moveToDetailScreen = (id) => {
-    // navigation.navigate('HomeNav', {
-    //   screen: 'Details',
-    //   params: {itemId: id}
-    //   })
       navigation.navigate('Details', {itemId: id})
   }
 
   return (
-    <ScrollView>
+    <ScrollView style={{backgroundColor: 'white', flex: 1}}>
 
       {/* Header */}
       <View style={style.header}>

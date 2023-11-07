@@ -13,7 +13,6 @@ import AnimatedCircle from './AnimatedCircle';
 import usePath from '../../hooks/usePath';
 import { getPathXCenter } from '../../utils/Path';
 import { SCREEN_WIDTH } from '../../constants/Screen';
-import { useRoute } from '@react-navigation/native';
 
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 export const CustomBottomTab = ({
@@ -24,8 +23,6 @@ export const CustomBottomTab = ({
   const {containerPath, curvedPaths, tHeight} = usePath();
   const circleXCoordinate = useSharedValue(0);
   const progress = useSharedValue(1);
-  // const route = useRoute();
-  // const routeName = route.name;
 
   const handleMoveCircle = (currentPath) => {
     circleXCoordinate.value = getPathXCenter(currentPath);
@@ -79,13 +76,9 @@ export const CustomBottomTab = ({
         {state.routes.map((route, index) => {
           const {options} = descriptors[route.key];
           const label = options.tabBarLabel ? options.tabBarLabel : route.name;
-          // const isHomeStack = route.name === 'Home' || route.name === 'Details' || route.name === 'Cart';
-          // const shouldHideTab = isHomeStack && route.name !== 'Home';
-          // console.log('@@@@', label, isHomeStack, shouldHideTab);
           const isCurrentRoute = label === route.name;
           console.log('++++', isCurrentRoute);
           return (
-            // shouldHideTab ? null : (
             <TabItem
               key={index.toString()}
               label={label}
@@ -93,10 +86,8 @@ export const CustomBottomTab = ({
               activeIndex={state.index + 1}
               index={index}
               onTabPress={() => handleTabPress(index + 1, route.name)}
-              // isHidden={label === 'Home' && !isCurrentRoute}
             />
             )
-          // );
         })}
       </View>
     </View>

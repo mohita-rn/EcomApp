@@ -63,5 +63,19 @@ export default styles = StyleSheet.create({
         fontSize: 50,
         color: COLORS.darkScale,
         marginHorizontal: useWidth(5)
-    }, 
+    }, count: {
+        position: 'absolute',
+        right: -5,
+        top: -2,
+        backgroundColor: COLORS.secondary,
+        borderRadius: 8,
+        width: 16,
+        height: 16,
+        justifyContent: 'center',
+        alignItems: 'center'
+    }, counTxt: {
+        fontFamily: FONTS.SemiBold,
+        fontSize: 11,
+        color: 'white'
+    }
 });

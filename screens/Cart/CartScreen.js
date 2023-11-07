@@ -80,7 +80,7 @@ const CartScreen = ({navigation, cartItems}) => {
         </View>
         <CustomButton 
           title={STRINGS.CHECKOUT}
-          style={{backgroundColor: COLORS.primary, marginHorizontal: useWidth(5)}}
+          style={style.btn}
           txtStyle={{color: COLORS.white}}
         />
       </View>

@@ -74,6 +74,8 @@ export default styles = StyleSheet.create({
         marginHorizontal: useWidth(2),
         paddingTop: 40
     }, btn: {
-        
+        backgroundColor: COLORS.primary, 
+        marginHorizontal: useWidth(5), 
+        marginVertical: 20
     }
 });

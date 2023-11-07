@@ -24,10 +24,10 @@ export default styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         borderRadius: 28,
-        padding: 10,
+        padding: 8,
         marginHorizontal: 20,
         backgroundColor: COLORS.primaryDark,
-        marginBottom: useHeight(5)
+        marginBottom: useHeight(4)
     },
     headerSearchBox: {
         fontFamily: FONTS.Medium,
@@ -36,7 +36,8 @@ export default styles = StyleSheet.create({
         marginLeft: 5,
     },
     searchIcon : {
-        margin: 5,
+        margin: 3,
+        marginLeft: 20
     },
     deliveryContainer: {
         flexDirection: 'row',
@@ -91,11 +92,11 @@ export default styles = StyleSheet.create({
         color: COLORS.darkScale,
         marginBottom: useHeight(2)
     }, productBox: {
-        backgroundColor: COLORS.light,
+        backgroundColor: COLORS.white,
         borderRadius: 10,
         marginHorizontal: useWidth(5), 
         marginVertical: useHeight(2),
-        padding: 20,
+        padding: 15,
         width: 160,
         height: 194
     }, thumbnail: {
@@ -107,9 +108,11 @@ export default styles = StyleSheet.create({
         marginHorizontal: useWidth(3)
     }, addIcon: {
         backgroundColor: COLORS.primaryDark,
-        borderRadius: 10,
-        height: 20,
-        width: 20
+        borderRadius: 15,
+        height: 30,
+        width: 30,
+        alignItems: 'center',
+        justifyContent: 'center'
     }, price: {
         fontFamily: FONTS.SemiBold,
         fontSize: 14,
@@ -119,7 +122,9 @@ export default styles = StyleSheet.create({
         fontSize: 16,
         color: COLORS.lightGrayScale
     }, heartContainer: {
-        position: "absolute",   
+        position: "absolute",
+        // left: -5 ,
+        // top: -5  
     }, count: {
         position: 'absolute',
         right: -5,

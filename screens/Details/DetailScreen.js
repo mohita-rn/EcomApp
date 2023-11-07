@@ -17,7 +17,8 @@ const  DetailScreen = ({ route, navigation, productList })  => {
   const { itemId } = route.params
   const baseURL = `https://dummyjson.com/products/${itemId}`
   const [details, setDetails] = useState({});
-
+  let badgeCount = 4;
+  
   useEffect(() => {
     fetchDetails();
   }, [])
@@ -58,10 +59,15 @@ const  DetailScreen = ({ route, navigation, productList })  => {
         <BackButton handlePress={goBack}/>
         <TouchableOpacity onPress={moveToCart}>
           <SimpleLineIcon name="handbag" size={20} color={COLORS.dark} />
+          {badgeCount && badgeCount > 0 && 
+              <View style={style.count}>
+                <Text style={style.counTxt}>{badgeCount}</Text>
+              </View>
+            }
         </TouchableOpacity>
       </View>
 
-      <Text style={style.titleTxt}>{productList[itemId]?.title}</Text>
+      <Text style={style.titleTxt}>{details.title}</Text>
       <Text style={[style.titleTxt, {fontFamily: FONTS.ExtraBold, marginBottom: useHeight(2)}]}>{details.brand}</Text>
 
       <View style={style.ratings}>

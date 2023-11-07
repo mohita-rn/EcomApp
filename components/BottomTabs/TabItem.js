@@ -12,15 +12,8 @@ import {getPathXCenterByIndex} from '../../utils/Path';
 import usePath from '../../hooks/usePath';
 import {SCREEN_WIDTH} from '../../constants/Screen';
 import COLORS from '../../assets/colors';
-import {FONTS} from '../../assets/fonts';
+import FONTS from '../../assets/fonts';
 
-// export type TabProps = {
-//   label: string;
-//   icon: string;
-//   index: number;
-//   activeIndex: number;
-//   onTabPress: () => void;
-// };
 const ICON_SIZE = 25;
 const LABEL_WIDTH = SCREEN_WIDTH / 4;
 const AnimatedIcon = Animated.createAnimatedComponent(MaterialIcons);
@@ -65,7 +58,7 @@ const TabItem = ({
   useEffect(() => {
     animatedActiveIndex.value = activeIndex;
     if (activeIndex === index + 1) {
-      iconColor.value = withTiming('white');
+      iconColor.value = withTiming(COLORS.secondary);
     } else {
       iconColor.value = withTiming(COLORS.dark);
     }
@@ -105,8 +98,8 @@ const styles = StyleSheet.create({
     width: LABEL_WIDTH,
   },
   label: {
-    color: 'rgba(128,128,128,0.8)',
+    color: COLORS.greyScale,
     fontSize: 17,
-    // fontFamily: FONTS.Medium
+    fontFamily: FONTS.Medium
   },
 });
